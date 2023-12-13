@@ -1,0 +1,1075 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Open+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap');
+
+body, html {
+    background-color: #f7d4dc;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='18' viewBox='0 0 100 18'%3E%3Cpath fill='%23ed9bad' fill-opacity='0.19' d='M61.82 18c3.47-1.45 6.86-3.78 11.3-7.34C78 6.76 80.34 5.1 83.87 3.42 88.56 1.16 93.75 0 100 0v6.16C98.76 6.05 97.43 6 96 6c-9.59 0-14.23 2.23-23.13 9.34-1.28 1.03-2.39 1.9-3.4 2.66h-7.65zm-23.64 0H22.52c-1-.76-2.1-1.63-3.4-2.66C11.57 9.3 7.08 6.78 0 6.16V0c6.25 0 11.44 1.16 16.14 3.42 3.53 1.7 5.87 3.35 10.73 7.24 4.45 3.56 7.84 5.9 11.31 7.34zM61.82 0h7.66a39.57 39.57 0 0 1-7.34 4.58C57.44 6.84 52.25 8 46 8S34.56 6.84 29.86 4.58A39.57 39.57 0 0 1 22.52 0h15.66C41.65 1.44 45.21 2 50 2c4.8 0 8.35-.56 11.82-2z'%3E%3C/path%3E%3C/svg%3E");
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-family: 'Montserrat', monospace;
+}
+.body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAV BAR */
+.fixed-nav {
+    background-color: #5E503F;
+    width: 100%;
+    /* fix nav bar to top of page */
+    position: fixed;
+    top: 0;
+    /* nav bar will always be in front of any other items */
+    z-index: 1000;
+    /* can stack left-elem and right-elem within nav-bar */
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Montserrat', monospace;
+
+}
+.fixed-nav .left-elem,
+.fixed-nav .right-elem {
+    display: flex;
+    /* remove bullet points */
+    list-style-type: none;
+    /* make parent elements (UL) font size 0 b/c we're using an inline block to stack our LI */
+        /* inline block = stacks each element like a letter in a word or paragraph */
+        /* making parent elements' font size 0 ensure no funk extra margins */
+    font-size: 0;
+    padding: 0;
+}
+.fixed-nav .left-elem li,
+.fixed-nav .right-elem li {
+    font-size: 20px;
+}
+.fixed-nav .left-elem li a,
+.fixed-nav .right-elem li a {
+    /* remove underlines */
+    text-decoration: none;
+    /* make the link's clickable are larger than the actual text */
+    display: block;
+    /* align text in the center of its parent div horizontally and vertically */
+    text-align: center;
+    /* change link color */
+    color: white;
+    padding: 2vh;
+
+}
+.fixed-nav .left-elem li {
+    width: 11vw;
+}
+.fixed-nav .right-elem li {
+    width: 6vw;
+}
+.fixed-nav .left-elem li a:hover,
+.fixed-nav .right-elem li a:hover {
+    background-color: #F0DAC1;
+    color: black;
+}
+/* hamburger menu for media query */
+.hamburger-menu {
+    display: none; /* Hidden by default for wider screens */
+    cursor: pointer;
+    padding-left: 20px;
+    padding-top: 15px;
+}
+.hamburger-icon {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.hamburger-line {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #5E503F;
+    padding: 10px;
+    z-index: 1000;
+}
+.dropdown-menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* HOME */
+.home {
+    /* make parent div relative so children can absolutely position within it */
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ed9bad;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='18' viewBox='0 0 100 18'%3E%3Cpath fill='%23f7d4dc' fill-opacity='0.4' d='M61.82 18c3.47-1.45 6.86-3.78 11.3-7.34C78 6.76 80.34 5.1 83.87 3.42 88.56 1.16 93.75 0 100 0v6.16C98.76 6.05 97.43 6 96 6c-9.59 0-14.23 2.23-23.13 9.34-1.28 1.03-2.39 1.9-3.4 2.66h-7.65zm-23.64 0H22.52c-1-.76-2.1-1.63-3.4-2.66C11.57 9.3 7.08 6.78 0 6.16V0c6.25 0 11.44 1.16 16.14 3.42 3.53 1.7 5.87 3.35 10.73 7.24 4.45 3.56 7.84 5.9 11.31 7.34zM61.82 0h7.66a39.57 39.57 0 0 1-7.34 4.58C57.44 6.84 52.25 8 46 8S34.56 6.84 29.86 4.58A39.57 39.57 0 0 1 22.52 0h15.66C41.65 1.44 45.21 2 50 2c4.8 0 8.35-.56 11.82-2z'%3E%3C/path%3E%3C/svg%3E");
+}
+.welcome {
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    /* font color */
+    color: #f0dac1;
+}
+.welcome-subtext {
+    font-size: 65px;
+    margin: 0;
+    margin-bottom: 3%;
+}
+.welcome-text1, .welcome-text2 {
+    font-size: 180px;
+    margin: 0;
+    line-height: .9;
+}
+.welcome-text2 {
+    color: #5E503F;
+}
+.magazine-letters {
+    position: absolute;
+    width: 45%;
+    height: 30%;
+    /* round the corners of the box */
+    border-radius: 20px;
+    top: 13%;
+    left: 75%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    background-color: #5E503F;
+    box-shadow: -10px 10px #ebcead;
+
+}
+.row1 {
+    margin-bottom: 5%;
+}
+.row2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.row1, .word, .middle-word {
+    display: flex;
+    flex-direction: row;
+}
+.middle-word {
+    margin-right: 10%;
+}
+.magazine-letter {
+    height: 80px;
+    width: auto;
+}
+
+/* SECTION HEADERS */
+.magazine-letters-body {
+    padding-top: 8%;
+    padding-bottom: 4%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+.word-body, .middle-word-body {
+    display: flex;
+    flex-direction: row;
+}
+.middle-word-body {
+    margin-right: 3%;
+}
+
+/* ABOUT */
+.about {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+.about-content {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Open Sans', sans-serif;
+}
+.quick-fact-content {
+    position: relative;
+    width: 40vw;
+    height: 47vh;
+    margin-left: 6%;
+}
+.rounded-box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    /* round corners of box */
+    border-radius: 20px;
+    z-index: 2;
+    background-color: #5E503F;
+    box-shadow: -10px 10px #ebcead;
+}
+.quick-facts {
+    display: flex;
+    flex-direction: column;
+    margin-left: 4%;
+    color: white;
+    /* quick-facts text takes up 100% of box its placed in */
+    width: 100%;
+    height: 100%;
+}
+.fact {
+    margin-bottom: 1%;
+}
+.larger-text {
+    font-size: 18px;
+    font-family: 'Montserrat', monospace;
+    font-weight: 700;
+    margin: 0;
+}
+.rounded-box2 {
+    width: 44vw;
+    height: 48vh;
+    position: absolute;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    /* round corners of box */
+    border-radius: 20px;
+    z-index: 2;
+    background-color: #ebcead;
+    box-shadow: -10px 10px #5E503F;
+}
+.about-me {
+    margin-left: 4%;
+    margin-top: 4%;
+    color: #5E503F;
+}
+.about-me p {
+    margin: 0;
+    margin-bottom: 3%;
+}
+.technology-icons-about {
+    margin-left: 6%;
+    padding-bottom: 4%;
+    display: flex;
+}
+.query-row {
+    display: flex;
+    flex-direction: row;
+}
+.group1, .group2 {
+    display: flex;
+    flex-direction: row;
+}
+.group2 {
+    padding-left: 6%;
+}
+.download-button {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    padding: 1% 1%;
+    width: 36%;
+    margin-top: 5%;
+    text-align: center;
+    background-color: #e36883;
+    box-shadow: -4px 4px #5E503F;
+    border-radius: 5px;
+}
+.download-button:hover {
+    background-color: #5E503F;
+    box-shadow: -4px 4px #e36883;
+    color: white;
+}
+
+/* PROJECTS */
+.project {
+    background-color: #5E503F;
+    border-radius: 20px;
+    width: 70%;
+    margin-left: 15%;
+    margin-bottom: 3%;
+    color: white;
+    box-shadow: -10px 10px #ebcead;
+    font-family: 'Open Sans', sans-serif;
+}
+.project-title {
+    margin: 0;
+    font-family: 'Montserrat', monospace;
+    font-weight: 700;
+}
+.project-content {
+    padding: 1.5%;
+}
+.project-description {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.bottom-row {
+    display: flex;
+    flex-direction: row;
+}
+.project-link {
+    display: inline-block;
+    margin-top: 1%;
+    background-color: #F0DAC1;
+    color: black;
+    padding: .75% 1.25%;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.technology-icons {
+    padding: 0.5% 2.5% 1.5% 0.5%;
+    /* right align within parent div bottom-row */
+    margin-left: auto;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.technology-icon {
+    height: 30px;
+    width: auto;
+    margin-left: 2%;
+    cursor: pointer;
+    position: relative;
+}
+.technology-icon-img {
+    height: 40px;
+    width: auto;
+}
+.technology-hover-text {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    color: black;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    white-space: nowrap;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s linear;
+}
+.technology-icon:hover .technology-hover-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* RESUME */
+.resume {
+    position: relative;
+    width: 100vw;
+    height: auto;
+}
+.info-box {
+    position: absolute;
+    top: 65%;
+    transform: translateY(-50%);
+    left: 10%;
+    background-color: #ebcead;
+    border-radius: 20px;
+    box-shadow: -10px 10px #5E503F;
+    color: #5E503F;
+    display: none;
+    width: 30%;
+    height: auto;
+    padding: 15px;
+}
+.instructions {
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+    left: 10%;
+    width: 320px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #faf3ea;
+    border: 9px double #5E503F;
+    border-radius: 50%;
+}
+.main-hover-instr {
+    position: absolute;
+    font-family: 'Shrikhand', monospace;
+    color: #e36883;
+    margin: 0;
+    line-height: .7;
+    font-size: 110px;
+    transform: rotate(-10deg);
+    padding-bottom: 5%;
+}
+.arrow {
+    width: 75%;
+    transform: rotate(-10deg);
+    padding-top: 35%;
+}
+.work-exp {
+    padding: 2%;
+    width: 46%;
+    background-color: #5E503F;
+    border-radius: 20px;
+    color: white;
+    box-shadow: -10px 10px #ebcead;
+    margin-left: 50%;
+}
+table {
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+tr:hover {
+    background-color: white;
+    color: #5E503F;
+    cursor: pointer;
+}
+.educ {
+    padding: 2%;
+    width: 46%;
+    background-color: #5E503F;
+    border-radius: 20px;
+    color: white;
+    box-shadow: -10px 10px #ebcead;
+    margin-left: 50%;
+}
+.work-exp-content {
+    padding: 0;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 15%;
+}  
+
+/* ACTIVITIES */
+.activities {
+    position: relative;
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+.club-name {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 22px;
+    font-family: 'Montserrat', monospace;
+    font-weight: 700;
+}
+.club-position {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 19px;
+    font-family: 'Montserrat', monospace;
+    font-weight: 500;
+}
+.club-description {
+    margin-bottom: 0;
+}
+.ACM-W {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    align-items: center;
+}
+.panel-img {
+    width: 40%;
+    height: auto;
+    padding-left: 10%;
+}
+.acm-content {
+    background-color: #5E503F;
+    border-radius: 20px;
+    width: 35%;
+    margin-left: 1.8%;
+    padding: 2%;
+    color: white;
+    box-shadow: -10px 10px #ebcead;
+    font-family: 'Open Sans', sans-serif;
+}
+.motorsports {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    align-items: center;
+}
+.motor-content {
+    background-color: #5E503F;
+    border-radius: 20px;
+    width: 35%;
+    margin-left: 10%;
+    padding: 2%;
+    color: white;
+    box-shadow: -10px 10px #ebcead;
+    font-family: 'Open Sans', sans-serif;
+}
+.car-img {
+    width: 40%;
+    height: auto;
+    padding-left: 2%;
+}
+
+/* CONTACT ME */
+.contact {
+    width: 50%;
+    margin: 50px auto;
+}
+.contact-content {
+    background-color: #5E503F;
+    border-radius: 20px;
+    width: 100%;
+    padding: 2%;
+    color: white;
+    box-shadow: -10px 10px #ebcead;
+}
+.sub-header {
+    font-family: 'Open Sans', sans-serif;
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+input {
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+textarea  {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+.stack-form {
+    display: flex;
+    flex-direction: row;
+}
+.smoltxt {
+    width: 35%;
+    margin-right: 10%;
+}
+.smolbox {
+    width: 35%;
+    margin-right: 10%;
+}
+button {
+    background-color: #f7d4dc;
+    color: #5E503F;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+}
+button:hover {
+    background-color: #ed9bad;
+    color: white;
+}
+  
+/* FOOTER */
+.footer-wrapper {
+    position: relative;
+    width: 100vw;
+}
+.footer {
+    position: absolute;
+    background-color: #e36883;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    margin-top: 3%;
+}
+
+/* MEDIA QUERY */
+@media only screen and (max-width: 1270px) {
+    .welcome-subtext {
+        font-size: 55px;
+    }
+    .welcome-text1, .welcome-text2 {
+        font-size: 170px;
+    }
+    .magazine-letter {
+        height: 75px;
+    }
+    .download-button {
+        margin-top: 10%;
+}}
+@media only screen and (max-width: 1150px) {
+    .welcome-subtext {
+        font-size: 50px;
+    }
+    .welcome-text1, .welcome-text2 {
+        font-size: 160px;
+    }
+    .magazine-letters {
+        height: 25%;
+    }
+    .magazine-letter {
+        height: 70px;
+}}
+@media only screen and (max-width: 1100px) {
+    .welcome-text1, .welcome-text2 {
+        font-size: 150px;
+    }
+    .magazine-letter {
+        height: 65px;
+    }
+    .instructions {
+        top: 60%;
+}}
+@media only screen and (max-width: 1050px) {
+    .welcome {
+        top: 40%;
+    }
+    .welcome-text1, .welcome-text2 {
+        font-size: 145px;
+    }
+    .magazine-letters {
+        width: 50%;
+        left: 70%;
+}}
+@media only screen and (max-width: 970px) {
+    .welcome {
+        top: 45%;
+    }
+    .welcome-text1, .welcome-text2 {
+        font-size: 130px;
+    }
+    .download-button {
+        margin-top: 15%;
+    }
+    .instructions {
+        left: 5%;
+}}
+@media screen and (max-width: 900px) {
+    .fixed-nav .left-elem {
+        display: none;
+    }
+    .fixed-nav .right-elem {
+        margin-left: auto;
+        padding-right: 2%;
+    }
+    .fixed-nav .right-elem li {
+        margin-right: 10px;
+        width: 6vw;
+    }
+    .fixed-nav .hamburger-menu {
+        display: flex;
+    }
+    .fixed-nav .dropdown-menu {
+        display: block
+}}
+@media only screen and (max-width: 900px) {
+    .magazine-letters {
+        width: 55%;
+        left: 65%;
+}}
+@media only screen and (max-width: 875px) {
+    .welcome-text1, .welcome-text2 {
+        font-size: 125px;
+}}
+@media only screen and (max-width: 850px) {
+    .welcome {
+        top: 55%;
+    }
+    .welcome-text1, .welcome-text2 {
+        font-size: 100px;
+    }
+    .magazine-letters {
+        width: 70%;
+        left: 60%;
+    }
+    .magazine-letter {
+        height: 70px;
+    }
+    .instructions {
+        width: 290px;
+        height: 270px;
+    }
+    .main-hover-instr {
+        font-size: 100px;
+    }
+    .arrow {
+        width: 70%;
+}}
+@media only screen and (max-width: 800px) {
+    .quick-fact-content {
+        height: 50vh;
+    }
+    .rounded-box2 {
+        height: 50vh;
+    }
+    .bottom-row {
+        flex-direction: column;
+    }
+    .project-link {
+        width: auto;
+        align-self: flex-start;
+        padding: 1.5% 1.25%;
+    }
+    .technology-icons {
+        padding-top: 3%;
+    }
+    .technology-icon {
+        margin-bottom: 3%;
+}}
+@media only screen and (max-width: 750px) {
+    .rounded-box2 {
+        height: 55vh;
+    }
+    .query-row {
+        flex-direction: column;
+    }
+    .group2 {
+        padding-top: 10%;
+        padding-bottom: 2%;
+        padding-left: 0;
+    }
+    .download-button {
+        width: 45%;
+
+    }
+    .quick-fact-content {
+        height: 52vh;
+    }
+    .instructions {
+        display: none;
+    }
+    .main-hover-instr {
+        display: none;
+    }
+    .arrow {
+        display: none;
+    }
+    .educ {
+        width: 75%;
+        margin-left: 10%;
+    }
+    .work-exp {
+        width: 75%;
+        margin-left: 10%;
+    }
+    .info-box {
+        width: 60%;
+}}
+@media only screen and (max-width: 700px) {
+    .welcome-text1, .welcome-text2 {
+        font-size: 90px;
+    }
+    .magazine-letters {
+        width: 75%;
+        left: 55%;
+    }
+    .rounded-box2 {
+        height: 56vh;
+}}
+@media only screen and (max-width: 650px) {
+    .welcome-text1, .welcome-text2 {
+        font-size: 85px;
+    }
+    .magazine-letters {
+        width: 80%;
+        left: 50%;
+    }
+    .magazine-letters-body {
+        padding-top: 12%;
+        padding-bottom: 8%;
+    }
+    .download-button {
+        font-size: 18px;
+    }
+    .about-me {
+        font-size: 15px;
+    }
+    .larger-text {
+        font-size: 16px;
+    }
+    .quick-facts {
+        font-size: 15px;
+}}
+@media only screen and (max-width: 575px) {
+    .welcome {
+        top: 50%;
+    }
+    .welcome-subtext {
+        font-size: 55px;
+    }
+    .welcome-text1, .welcome-text2 {
+        font-size: 90px;
+    }
+    .magazine-letters {
+        height: 25%;
+    }
+    .magazine-letter {
+        height: 65px;
+    }
+    .quick-fact-content {
+        height: 54vh;
+}}
+@media only screen and (max-width: 525px) {
+    .welcome-text1, .welcome-text2 {
+        font-size: 85px;
+    }
+    .magazine-letters {
+        height: 23%;
+        width: 90%;
+    }
+    .quick-fact-content {
+        height: 60vh;
+}}
+
+/* RESUME SECTION */
+/* .resume {
+    position: relative;
+    width: 100vw;
+    height: auto;
+}
+.button-wrap {
+    text-align: center;
+    padding-top: 1%
+}
+.work-exp-content {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+    width: 100vw;
+}
+.exp {
+    display: flex;
+    flex-direction: row;
+}
+.sub-title1, .sub-title2 {
+    font-size: 40px;
+    width: 47%;
+    text-align: right;
+    color: #5E503F;
+    margin-top: 0;
+    font-family: 'Montserrat', monospace;
+    font-weight: 500;
+
+}
+.sub-title2 {
+    margin-top: 2%;
+}
+.bullet {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: left;
+}
+.job-title-time {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    height: 100%;
+    text-align: right;
+    margin-right: 5%;
+}
+.job-title {
+    width: 100%;
+    padding-left: 10%;
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: .5%;
+    text-align: right;
+    padding-right: 1.5%;
+    font-size: 19px;
+}
+.job-time {
+    width: 100%;
+    padding-left: 10%;
+    padding-top: 0;
+    margin-top: 0;
+    text-align: right;
+}
+.job-comp {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 22px;
+}
+.job-desc {
+    margin-top: 0;
+}
+.bullet-content {
+    width: 40%;
+    margin-left: 1%;
+    margin-right: 5%;
+    padding-top: 0;
+    margin-top: 0;
+}
+.timeline {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 17px;
+    border-left: 2px solid rgba(0,0,0,.3);
+}
+.circle {
+    position: absolute;
+    right: 8px;
+    top: 1.5%;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    border: 2px solid rgba(0,0,0,.3);
+    background-color: white;
+}
+ */
+/* <div class="work-exp-content">
+ <div class="exp">
+   <h3 class="sub-title1">Work Experience</h3>
+ </div>
+ <div class="bullet">
+   <div class="job-title-time">
+     <p class="job-title">Machine Learning Researcher</p>
+     <p class="job-time">Sep 2023 - Present</p>
+   </div>
+   <div class="timeline">
+     <div class="circle"></div>
+   </div>
+   <div class="bullet-content">
+     <h3 class="job-comp"><strong>New York University</strong></h3>
+     <p class="job-desc">
+       Developing an ML algorithm to semantic analysis on human written text</br>
+       Creating an AI chatbot which acts as a personal assistant for university professors
+     </p>
+   </div>
+ </div>
+ <div class="bullet">
+   <div class="job-title-time">
+     <p class="job-title">Software Engineering Intern</p>
+     <p class="job-time">May 2023 - Present</p>
+   </div>
+   <div class="timeline">
+     <div class="circle"></div>
+   </div>
+   <div class="bullet-content">
+     <h3 class="job-comp"><b>Humana</b></h3>
+     <p class="job-desc">
+       Developing an application to automatically perform security scans on open-source repositories</br>
+       Reduced time spent fixing security vulnerabilities, saving team $87,000-162,000 annually
+     </p>
+   </div>
+ </div>
+ <div class="bullet">
+   <div class="job-title-time">
+     <p class="job-title">Head of IDBE</p>
+     <p class="job-time">Mar 2023 - Present</p>
+   </div>
+   <div class="timeline">
+     <div class="circle"></div>
+   </div>
+   <div class="bullet-content">
+     <h3 class="job-comp"><b>NYU General Engineering</b></h3>
+     <p class="job-desc">
+       Create and conduct Inclusion, Diversity, Belonging and Equity (IDBE) training for department faculty and teaching assistants</br>
+       Spearheaded the creation of curriculum taught to NYU Tandon’s entire freshman class on IDBE principles
+     </p>
+   </div>
+ </div>
+ <div class="bullet">
+   <div class="job-title-time">
+     <p class="job-title">Teaching Assistant</p>
+     <p class="job-time">Aug 2022 - Present</p>
+   </div>
+   <div class="timeline">
+     <div class="circle"></div>
+   </div>
+   <div class="bullet-content">
+     <h3 class="job-comp"><b>NYU General Engineering</b></h3>
+     <p class="job-desc">
+       Guide students through the Engineering Design Process to create innovative solutions to real-world challenges</br>
+       Prepare and facilitate laboratory sessions and classes for students        
+     </p>
+   </div>
+ </div>
+ <div class="bullet">
+   <div class="job-title-time">
+     <p class="job-title">Software Engineering Intern</p>
+     <p class="job-time">Jul - Aug 2022</p>
+   </div>
+   <div class="timeline">
+     <div class="circle"></div>
+   </div>
+   <div class="bullet-content">
+     <h3 class="job-comp"><b>HCA Healthcare</b></h3>
+     <p class="job-desc">
+       Collaborated with a team of engineers to present on ethics in artificial intelligence to over 100 employees</br>
+       Gained insight into the intersection between healthcare and tech by observing product demonstrations and code reviews
+     </p>
+   </div>
+ </div>
+</div> -->
+<!-- <div class="work-exp-content">
+ <h3 class="sub-title2">Education</h3>
+ <div class="bullet">
+   <div class="job-title-time">
+     <p class="job-title">Masters of Science, Computer Science</p>
+     <p class="job-time">May 2023 - Present</p>
+   </div>
+   <div class="timeline">
+     <div class="circle"></div>
+   </div>
+   <div class="bullet-content">
+     <h3 class="job-comp"><strong>New York University</strong></h3>
+     <p class="job-desc">
+       Expected May 2025   |   GPA: 3.33</br>
+       Concentration in Aritificial Intelligence/Machine Learning
+     </p>
+   </div>
+ </div>
+ <div class="bullet">
+   <div class="job-title-time">
+     <p class="job-title">Bachelors of Science, Computer Science</p>
+     <p class="job-time">Aug 2020 - Present</p>
+   </div>
+   <div class="timeline">
+     <div class="circle"></div>
+   </div>
+   <div class="bullet-content">
+     <h3 class="job-comp"><strong>New York University</strong></h3>
+     <p class="job-desc">
+       Expected May 2024 | GPA: 3.89</br>
+       Awards: Dean's List
+     </p>
+   </div>
+ </div>
+ <div class="bullet">
+   <div class="job-title-time">
+     <p class="job-title">High School Degree</p>
+     <p class="job-time">Aug 2016 - May 2020</p>
+   </div>
+   <div class="timeline">
+     <div class="circle"></div>
+   </div>
+   <div class="bullet-content">
+     <h3 class="job-comp"><b>Harpeth Hall</b></h3>
+     <p class="job-desc">
+       Awards: National Merit Scholarship Finalist, National AP Scholar with Distinction
+     </p>
+   </div>
+ </div>
+</div> */
