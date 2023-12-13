@@ -805,6 +805,18 @@ button:hover {
         width: 90%;
         margin-left: 5%;
     }
+    .work-exp {
+        width: 90%;
+        margin-left: 5%;
+    }
+    .educ {
+        width: 90%;
+        margin-left: 5%;
+    }
+    .info-box {
+        width: 80%;
+        left: 10%;
+    }
     .ACM-W {
         flex-direction: column;
         padding-bottom: 10%;
