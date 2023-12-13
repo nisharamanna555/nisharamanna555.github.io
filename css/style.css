@@ -638,6 +638,9 @@ button:hover {
     }
     .instructions {
         top: 60%;
+    }
+    .contact {
+        width: 70%;
 }}
 @media only screen and (max-width: 1050px) {
     .welcome {
@@ -680,6 +683,9 @@ button:hover {
     }
     .fixed-nav .dropdown-menu {
         display: block
+    }
+    .contact {
+        width: 80%;
 }}
 @media only screen and (max-width: 900px) {
     .magazine-letters {
@@ -782,6 +788,30 @@ button:hover {
         width: 75%;
         left: 55%;
     }
+    .ACM-W {
+        flex-direction: column;
+        padding-bottom: 10%;
+    }
+    .panel-img {
+        width: 80%;
+        padding-left: 0;
+        padding-bottom: 5%;
+    }
+    .acm-content {
+        width: 80%;
+    }
+    .motorsports {
+        flex-direction: column;
+    }
+    .car-img {
+        width: 80%;
+        padding-left: 0;
+        padding-top: 5%;
+    }
+    .motor-content {
+        width: 80%;
+        margin: 0;
+    }
     .rounded-box2 {
         height: 56vh;
 }}
@@ -839,237 +869,3 @@ button:hover {
     .quick-fact-content {
         height: 60vh;
 }}
-
-/* RESUME SECTION */
-/* .resume {
-    position: relative;
-    width: 100vw;
-    height: auto;
-}
-.button-wrap {
-    text-align: center;
-    padding-top: 1%
-}
-.work-exp-content {
-    display: flex;
-    flex-direction: column;
-    font-family: 'Open Sans', sans-serif;
-    width: 100vw;
-}
-.exp {
-    display: flex;
-    flex-direction: row;
-}
-.sub-title1, .sub-title2 {
-    font-size: 40px;
-    width: 47%;
-    text-align: right;
-    color: #5E503F;
-    margin-top: 0;
-    font-family: 'Montserrat', monospace;
-    font-weight: 500;
-
-}
-.sub-title2 {
-    margin-top: 2%;
-}
-.bullet {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    text-align: left;
-}
-.job-title-time {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 30%;
-    height: 100%;
-    text-align: right;
-    margin-right: 5%;
-}
-.job-title {
-    width: 100%;
-    padding-left: 10%;
-    padding-top: 0;
-    margin-top: 0;
-    margin-bottom: .5%;
-    text-align: right;
-    padding-right: 1.5%;
-    font-size: 19px;
-}
-.job-time {
-    width: 100%;
-    padding-left: 10%;
-    padding-top: 0;
-    margin-top: 0;
-    text-align: right;
-}
-.job-comp {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 22px;
-}
-.job-desc {
-    margin-top: 0;
-}
-.bullet-content {
-    width: 40%;
-    margin-left: 1%;
-    margin-right: 5%;
-    padding-top: 0;
-    margin-top: 0;
-}
-.timeline {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 17px;
-    border-left: 2px solid rgba(0,0,0,.3);
-}
-.circle {
-    position: absolute;
-    right: 8px;
-    top: 1.5%;
-    width: 17px;
-    height: 17px;
-    border-radius: 50%;
-    border: 2px solid rgba(0,0,0,.3);
-    background-color: white;
-}
- */
-/* <div class="work-exp-content">
- <div class="exp">
-   <h3 class="sub-title1">Work Experience</h3>
- </div>
- <div class="bullet">
-   <div class="job-title-time">
-     <p class="job-title">Machine Learning Researcher</p>
-     <p class="job-time">Sep 2023 - Present</p>
-   </div>
-   <div class="timeline">
-     <div class="circle"></div>
-   </div>
-   <div class="bullet-content">
-     <h3 class="job-comp"><strong>New York University</strong></h3>
-     <p class="job-desc">
-       Developing an ML algorithm to semantic analysis on human written text</br>
-       Creating an AI chatbot which acts as a personal assistant for university professors
-     </p>
-   </div>
- </div>
- <div class="bullet">
-   <div class="job-title-time">
-     <p class="job-title">Software Engineering Intern</p>
-     <p class="job-time">May 2023 - Present</p>
-   </div>
-   <div class="timeline">
-     <div class="circle"></div>
-   </div>
-   <div class="bullet-content">
-     <h3 class="job-comp"><b>Humana</b></h3>
-     <p class="job-desc">
-       Developing an application to automatically perform security scans on open-source repositories</br>
-       Reduced time spent fixing security vulnerabilities, saving team $87,000-162,000 annually
-     </p>
-   </div>
- </div>
- <div class="bullet">
-   <div class="job-title-time">
-     <p class="job-title">Head of IDBE</p>
-     <p class="job-time">Mar 2023 - Present</p>
-   </div>
-   <div class="timeline">
-     <div class="circle"></div>
-   </div>
-   <div class="bullet-content">
-     <h3 class="job-comp"><b>NYU General Engineering</b></h3>
-     <p class="job-desc">
-       Create and conduct Inclusion, Diversity, Belonging and Equity (IDBE) training for department faculty and teaching assistants</br>
-       Spearheaded the creation of curriculum taught to NYU Tandon’s entire freshman class on IDBE principles
-     </p>
-   </div>
- </div>
- <div class="bullet">
-   <div class="job-title-time">
-     <p class="job-title">Teaching Assistant</p>
-     <p class="job-time">Aug 2022 - Present</p>
-   </div>
-   <div class="timeline">
-     <div class="circle"></div>
-   </div>
-   <div class="bullet-content">
-     <h3 class="job-comp"><b>NYU General Engineering</b></h3>
-     <p class="job-desc">
-       Guide students through the Engineering Design Process to create innovative solutions to real-world challenges</br>
-       Prepare and facilitate laboratory sessions and classes for students        
-     </p>
-   </div>
- </div>
- <div class="bullet">
-   <div class="job-title-time">
-     <p class="job-title">Software Engineering Intern</p>
-     <p class="job-time">Jul - Aug 2022</p>
-   </div>
-   <div class="timeline">
-     <div class="circle"></div>
-   </div>
-   <div class="bullet-content">
-     <h3 class="job-comp"><b>HCA Healthcare</b></h3>
-     <p class="job-desc">
-       Collaborated with a team of engineers to present on ethics in artificial intelligence to over 100 employees</br>
-       Gained insight into the intersection between healthcare and tech by observing product demonstrations and code reviews
-     </p>
-   </div>
- </div>
-</div> -->
-<!-- <div class="work-exp-content">
- <h3 class="sub-title2">Education</h3>
- <div class="bullet">
-   <div class="job-title-time">
-     <p class="job-title">Masters of Science, Computer Science</p>
-     <p class="job-time">May 2023 - Present</p>
-   </div>
-   <div class="timeline">
-     <div class="circle"></div>
-   </div>
-   <div class="bullet-content">
-     <h3 class="job-comp"><strong>New York University</strong></h3>
-     <p class="job-desc">
-       Expected May 2025   |   GPA: 3.33</br>
-       Concentration in Aritificial Intelligence/Machine Learning
-     </p>
-   </div>
- </div>
- <div class="bullet">
-   <div class="job-title-time">
-     <p class="job-title">Bachelors of Science, Computer Science</p>
-     <p class="job-time">Aug 2020 - Present</p>
-   </div>
-   <div class="timeline">
-     <div class="circle"></div>
-   </div>
-   <div class="bullet-content">
-     <h3 class="job-comp"><strong>New York University</strong></h3>
-     <p class="job-desc">
-       Expected May 2024 | GPA: 3.89</br>
-       Awards: Dean's List
-     </p>
-   </div>
- </div>
- <div class="bullet">
-   <div class="job-title-time">
-     <p class="job-title">High School Degree</p>
-     <p class="job-time">Aug 2016 - May 2020</p>
-   </div>
-   <div class="timeline">
-     <div class="circle"></div>
-   </div>
-   <div class="bullet-content">
-     <h3 class="job-comp"><b>Harpeth Hall</b></h3>
-     <p class="job-desc">
-       Awards: National Merit Scholarship Finalist, National AP Scholar with Distinction
-     </p>
-   </div>
- </div>
-</div> */

@@ -483,10 +483,29 @@
     </div>
     <script>
         // JAVASCRIPT FOR HAMBURGER MENU
-        function toggleMenu() {
-            var dropdownMenu = document.querySelector('.fixed-nav .dropdown-menu');
-            dropdownMenu.style.display = (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') ? 'block' : 'none';
-        }
+        document.addEventListener('DOMContentLoaded', function () {
+          var hamburgerMenu = document.querySelector('.fixed-nav .hamburger-menu');
+          var dropdownMenu = document.querySelector('.fixed-nav .dropdown-menu');
+
+          // Initial hide
+          dropdownMenu.style.display = 'none';
+
+          // Toggle dropdown menu visibility
+          function toggleMenu() {
+              dropdownMenu.style.display = (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') ? 'block' : 'none';
+          }
+
+          // Close dropdown menu when clicking outside
+          document.addEventListener('click', function (event) {
+              if (!hamburgerMenu.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                  dropdownMenu.style.display = 'none';
+              }
+          });
+
+          // Attach toggleMenu function to hamburgerMenu click event
+          hamburgerMenu.addEventListener('click', toggleMenu);
+        });
+
         // JAVASCRIPT FOR MAGAZINE CUTOUT ANIMATIONS
         const letterGroups = [
           ["w", "e1", "l", "c", "o1", "m1", "e2"],
