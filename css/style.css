@@ -167,9 +167,12 @@ body, html {
     align-items: center;
     justify-content: center;
 }
-.row1, .word, .middle-word {
+.row1, .word, .middle-word, .pt1, .pt2 {
     display: flex;
     flex-direction: row;
+}
+.pt1 {
+    margin-right: 10%;
 }
 .middle-word {
     margin-right: 10%;
@@ -338,11 +341,22 @@ body, html {
     border-radius: 4px;
 }
 .technology-icons {
-    padding: 0.5% 2.5% 1.5% 0.5%;
+    padding: 0.5% 2.5% 2.5% 0.5%;
     /* right align within parent div bottom-row */
     margin-left: auto;
     display: flex;
     flex-direction: row-reverse;
+}
+.split-icons {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.first-half, .second-half {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.second-half {
+    margin-right: 4%;
 }
 .technology-icon {
     height: 30px;
@@ -755,7 +769,6 @@ button:hover {
     }
     .download-button {
         width: 45%;
-
     }
     .quick-fact-content {
         height: 52vh;
@@ -787,6 +800,10 @@ button:hover {
     .magazine-letters {
         width: 75%;
         left: 55%;
+    }
+    .project {
+        width: 90%;
+        margin-left: 5%;
     }
     .ACM-W {
         flex-direction: column;
@@ -866,6 +883,122 @@ button:hover {
         height: 23%;
         width: 90%;
     }
+    .magazine-letter {
+        height: 60px;
+    }
     .quick-fact-content {
         height: 60vh;
+}}
+@media only screen and (max-width: 500px) {
+    .welcome-text1, .welcome-text2 {
+        font-size: 80px;
+    }
+    .magazine-letters {
+        width: 85%;
+    }
+    .magazine-letter {
+        height: 55px;
+    }
+    .quick-fact-content {
+        height: 62vh;
+    }
+    .rounded-box2 {
+        height: 58vh;
+    }
+    .download-button {
+        width: 55%;
+}}
+@media only screen and (max-width: 450px) {
+    .row2 {
+        flex-direction: column;
+    }
+    .pt1 {
+        margin-right: 0;
+        margin-bottom:  5%;
+    }
+    .welcome-subtext {
+        font-size: 45px;
+    }
+    .welcome-text1, .welcome-text2 {
+        font-size: 75px;
+    }
+    .magazine-letters {
+        height: 30%;
+    }
+    .magazine-letter {
+        height: 55px;
+    }
+    .quick-fact-content {
+        height: 64vh;
+    }
+    .rounded-box2 {
+        height: 60vh;
+    }
+    .download-button {
+        width: 65%;
+}}
+@media only screen and (max-width: 425px) {
+    .welcome-subtext {
+        font-size: 40px;
+    }
+    .welcome-text1, .welcome-text2 {
+        font-size: 70px;
+}}
+@media only screen and (max-width: 400px) {
+    .welcome {
+        top: 55%;
+    }
+    .welcome-subtext {
+        font-size: 40px;
+    }
+    .welcome-text1, .welcome-text2 {
+        font-size: 65px;
+    }
+    .magazine-letters {
+        height: 28%;
+        top: 20%;
+    }
+    .magazine-letter {
+        height: 50px;
+    }
+    .rounded-box2 {
+        height: 62vh;
+    }
+    .split-icons {
+        flex-direction: column;
+    }
+    .first-half {
+        margin-bottom: 10%;
+}}
+@media only screen and (max-width: 365px) {
+    .welcome-text1, .welcome-text2 {
+        font-size: 60px;
+    }
+    .magazine-letters {
+        height: 25%;
+    }
+    .magazine-letter {
+        height: 45px;
+    }
+    .quick-fact-content {
+        height: 70vh;
+    }
+    .rounded-box2 {
+        height: 66vh;
+    }
+    .download-button {
+        width: 75%;
+}}
+@media only screen and (max-width: 340px) {
+    .welcome-text1, .welcome-text2 {
+        font-size: 55px;
+    }
+    .magazine-letters {
+        height: 23%;
+    }
+    .magazine-letter {
+        height: 40px;
+    }
+    .rounded-box2 {
+        height: 68vh;
 }}
