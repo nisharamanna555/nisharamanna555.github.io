@@ -599,8 +599,8 @@ button {
     font-size: 15px;
 }
 button:hover {
-    background-color: #533639;
-    color: #f5edec;
+    background-color: #f5edec;
+    color: #533639;
 }
 
 /* FOOTER */
