@@ -663,7 +663,11 @@ button:hover {
     }
     .download-button {
         margin-top: 10%;
-}}
+    }
+    .info-box .work-exp-content, .info-box .educ-content {
+        margin-bottom: 30px;
+    }
+}
 @media only screen and (max-width: 1150px) {
     .welcome-subtext {
         font-size: 50px;
@@ -683,6 +687,22 @@ button:hover {
     .project {
         width: 80%;
         margin-left: 10%;
+    }
+    .info-box {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 25px;
+        box-sizing: border-box;
+    }
+    .info-box img {
+        position: relative;
+        margin-bottom: 20px;
+    }
+    .info-box p {
+        position: relative;
+        margin: 0;
+        left: 5%;
     }
 }
 @media only screen and (max-width: 1100px) {
@@ -707,6 +727,9 @@ button:hover {
     }
     .fixed-nav .left-elem li {
         width: 13vw;
+    }
+    .info-box .work-exp-content .info-box .educ-content {
+        margin-bottom: 35px;
     }
     .magazine-letters {
         width: 50%;
@@ -1021,9 +1044,6 @@ button:hover {
         align-items: flex-start;
         padding-bottom: 25px;
         box-sizing: border-box;
-    }
-    .info-box .work-exp-content, .info-box .educ-content {
-        margin-bottom: 30px;
     }
     .info-box img {
         position: relative;
