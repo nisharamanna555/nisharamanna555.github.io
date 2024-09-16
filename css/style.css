@@ -201,23 +201,24 @@ body, html {
 .about {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 100vh; 
 }
 .about-content {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     font-family: 'Open Sans', sans-serif;
 }
 .quick-fact-content {
     position: relative;
     width: 40vw;
-    height: 47vh;
+    height: auto;
     margin-left: 6%;
 }
 .rounded-box {
     width: 100%;
-    height: 100%;
-    position: absolute;
+    height: auto;
+    position: relative;
     display: flex;
     align-items: center;
     border-radius: 20px;
@@ -225,6 +226,7 @@ body, html {
     background-color: #533639;
     box-shadow: -10px 10px #f5edec;
     padding-right: 10px;
+    padding-bottom: 5px;
 }
 .quick-facts {
     display: flex;
@@ -244,15 +246,21 @@ body, html {
     font-weight: 700;
     margin: 0;
 }
-.rounded-box2 {
-    width: 44vw;
-    height: 48vh;
-    position: absolute;
-    left: 50%;
+.technology-content {
     display: flex;
     flex-direction: column;
-    align-items: left;
-    /* round corners of box */
+    align-items: flex-start;
+    margin-left: 4%;
+    position: relative;
+    width: 44vw;
+    height: auto;
+}
+.rounded-box2 {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
     border-radius: 20px;
     z-index: 2;
     background-color: #f5edec;
@@ -273,18 +281,20 @@ body, html {
     margin-left: 6%;
     padding-bottom: 4%;
     display: flex;
+    flex-wrap: wrap;
 }
 .download-button {
     font-size: 20px;
     color: #f5edec;
     text-decoration: none;
     padding: 1% 1%;
-    width: 36%;
-    margin-top: 5%;
+    width: 40%; /* can adjust in media queries */
+    margin-top: 4%; /* can adjust in media queries */
     text-align: center;
     background-color: #533639;
     box-shadow: -4px 4px #f5edec;
     border-radius: 5px;
+    align-self: flex-start;
 }
 .download-button:hover {
     background-color: #f5edec;
@@ -661,9 +671,6 @@ button:hover {
     .magazine-letter {
         height: 75px;
     }
-    .download-button {
-        margin-top: 10%;
-    }
     .info-box .work-exp-content, .info-box .educ-content {
         margin-bottom: 30px;
     }
@@ -674,9 +681,6 @@ button:hover {
     }
     .welcome-text1, .welcome-text2 {
         font-size: 160px;
-    }
-    .download-button {
-        margin-top: 15%;
     }
     .magazine-letters {
         height: 25%;
@@ -753,9 +757,6 @@ button:hover {
     .welcome-text1, .welcome-text2 {
         font-size: 130px;
     }
-    .download-button {
-        margin-top: 15%;
-    }
     .instructions {
         left: 5%;
     }
@@ -794,9 +795,6 @@ button:hover {
     }
     .fixed-nav .dropdown-menu {
         display: block
-    }
-    .download-button {
-        margin-top: 20%;
     }
     .contact {
         width: 80%;
@@ -842,18 +840,16 @@ button:hover {
         flex-direction: column;
         align-items: center;
     }
-    .quick-fact-content, .rounded-box2 {
-        width: 60%;
-        margin-bottom: 20px;
+    .quick-fact-content, .technology-content {
+        width: 70%;
         height: 50vh;
+        margin-left: 0%;
     }
-    .rounded-box2 {
-        position: relative;
-        left: 0;
-        margin-left: 6%;
+    .quick-fact-content {
+        margin-bottom: 20px;
     }
-    .download-button {
-        margin-top: 3%;
+    .technology-content {
+        margin-bottom: 40px;
     }
     .bottom-row {
         flex-direction: column;
@@ -867,14 +863,6 @@ button:hover {
     }
 }
 @media only screen and (max-width: 750px) {
-    .quick-fact-content, .rounded-box2 {
-        width: 70%;
-        margin-bottom: 20px;
-        height: 50vh;
-    }
-    .download-button {
-        width: 45%;
-    }
     .instructions {
         display: none;
     }
@@ -939,20 +927,8 @@ button:hover {
         width: 80%;
         margin: 0;
     }
-    .rounded-box2 {
-        height: 56vh;
-    }
-    .download-button {
-        margin-top: 10%;
-    }
 }
 @media only screen and (max-width: 650px) {
-    .quick-fact-content {
-        height: 47vh;
-    }
-    .rounded-box2 {
-        height: 52vh;
-    }
     .welcome-text1, .welcome-text2 {
         font-size: 85px;
     }
@@ -989,8 +965,14 @@ button:hover {
     .magazine-letter {
         height: 65px;
     }
+    .quick-fact-content, .technology-content {
+        width: 80%;
+    }
+    .quick-fact-content {
+        margin-bottom: 5px;
+    }
     .download-button {
-        margin-top: 15%;
+        width: 60%;
     }
 }
 @media only screen and (max-width: 525px) {
@@ -1003,9 +985,6 @@ button:hover {
     }
     .magazine-letter {
         height: 60px;
-    }
-    .download-button {
-        margin-top: 20%;
     }
     .project {
         width: 90%;
@@ -1027,12 +1006,6 @@ button:hover {
     }
     .magazine-letter {
         height: 55px;
-    }
-    .quick-fact-content, .rounded-box2 {
-        width: 80%;
-    }
-    .download-button {
-        width: 55%;
     }
     .acm-content, .motor-content {
         width: 90%;
@@ -1075,13 +1048,11 @@ button:hover {
     .magazine-letter {
         height: 55px;
     }
-    .quick-fact-content, .rounded-box2 {
-        width: 90%;
-        margin-left: 2%;
-    }
     .download-button {
-        width: 65%;
-}}
+        width: 70%;
+        margin-top: 6%;
+    }
+}
 @media only screen and (max-width: 425px) {
     .welcome-subtext {
         font-size: 40px;
@@ -1134,7 +1105,7 @@ button:hover {
         margin-left: 2%;
     }
     .download-button {
-        width: 75%;
+        width: 60%;
     }
     .info-box .work-exp-content, .info-box .educ-content {
         margin-bottom: 35px;
@@ -1152,12 +1123,5 @@ button:hover {
     }
     .technology-icon {
         margin-left: 1%;
-    }
-    .rounded-box2 {
-        height: 48vh;
-    }
-    .download-button {
-        margin-top: 15%;
-        width: 80%;
     }
 }
