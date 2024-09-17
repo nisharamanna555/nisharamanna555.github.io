@@ -842,7 +842,7 @@ button:hover {
     }
     .quick-fact-content, .technology-content {
         width: 70%;
-        height: 50vh;
+        height: auto;
         margin-left: 0%;
     }
     .quick-fact-content {
@@ -967,9 +967,6 @@ button:hover {
     }
     .quick-fact-content, .technology-content {
         width: 80%;
-    }
-    .quick-fact-content {
-        margin-bottom: 5px;
     }
     .download-button {
         width: 60%;
